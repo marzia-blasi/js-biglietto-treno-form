@@ -50,20 +50,18 @@ form.addEventListener("submit", (e) => {
 
   if (km > 0) {
     const price = km * 0.21;
-
     if (useragespecial < 18) {
-      const pricediscont20 = (price * 20) / 100;
-      const priceunder18 = price - pricediscont20;
-      console.log(
-        `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(2)}`
-      );
-    } else if (useragespecial >= 65) {
-      const pricediscount65 = (price * 40) / 100;
-      const priceafter65 = price - pricediscount65;
-      console.log(
-        `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(2)}`
-      );
-    }
+    const pricediscont20 = (price * 20) / 100;
+    const priceunder18 = price - pricediscont20;
+    console.log(
+      `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(2)}`
+    );
+  } else if (useragespecial >= 65) {
+    const pricediscount65 = (price * 40) / 100;
+    const priceafter65 = price - pricediscount65;
+    console.log(
+      `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(2)}`
+    );
   } else {
     console.log(`Il costo del viaggio per ${km} km è €${price.toFixed(2)}`);
   }
