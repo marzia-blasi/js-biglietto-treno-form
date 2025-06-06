@@ -67,3 +67,9 @@ form.addEventListener("submit", (e) => {
     }
   }
 });
+
+/* Cose da fare logica: 
+- appena è pronto il biglietto
+- stampare in pagina i dati che abbiamo ottenuto
+- generare un numero random per il posto 
+*/
