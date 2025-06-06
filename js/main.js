@@ -29,6 +29,7 @@ bottone
 
 const user = document.getElementById("name");
 const age = document.getElementById("age");
+const kmTrip = document.getElementById("km");
 const button = document.getElementById("bottone");
 
 const form = document.querySelector("form");
@@ -38,5 +39,32 @@ form.addEventListener("submit", (e) => {
   //console.log(e);
   const firstName = user.value;
   const ageValue = age.value;
-  console.log(firstName, ageValue);
+  const userkm = kmTrip.value;
+  // console.log(firstName, ageValue);
+
+  // logica per calcolo biglietto
+
+  // parseFloat() converte la stringa in numero intero
+  const km = parseFloat(userkm);
+  const useragespecial = parseFloat(ageValue);
+
+  if (km > 0) {
+    const price = km * 0.21;
+
+    if (useragespecial < 18) {
+      const pricediscont20 = (price * 20) / 100;
+      const priceunder18 = price - pricediscont20;
+      console.log(
+        `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(2)}`
+      );
+    } else if (useragespecial >= 65) {
+      const pricediscount65 = (price * 40) / 100;
+      const priceafter65 = price - pricediscount65;
+      console.log(
+        `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(2)}`
+      );
+    }
+  } else {
+    console.log(`Il costo del viaggio per ${km} km è €${price.toFixed(2)}`);
+  }
 });
