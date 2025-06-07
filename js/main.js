@@ -56,16 +56,34 @@ form.addEventListener("submit", (e) => {
       console.log(
         `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(2)}`
       );
+      document.getElementById(
+        "profile"
+      ).innerHTML = `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(
+        2
+      )}`;
     } else if (useragespecial >= 65) {
       const pricediscount65 = (price * 40) / 100;
       const priceafter65 = price - pricediscount65;
       console.log(
         `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(2)}`
       );
+      document.getElementById(
+        "profile"
+      ).innerHTML = `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(
+        2
+      )}`;
     } else {
       console.log(`Il costo del viaggio per ${km} km è €${price.toFixed(2)}`);
+      document.getElementById(
+        "profile"
+      ).innerHTML = `Il costo del viaggio per ${km} km è €${price.toFixed(2)}`;
     }
   }
+  // stampare in pagina i dati che abbiamo ottenuto
+
+  // priceunder18 , priceafter65 , price (normale)
+
+  // niente deve uscire da questa
 });
 
 /* Cose da fare logica: 
