@@ -57,7 +57,7 @@ form.addEventListener("submit", (e) => {
         `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(2)}`
       );
       document.getElementById(
-        "profile"
+        "ticket"
       ).innerHTML = `Il costo del viaggio per ${km} km è €${priceunder18.toFixed(
         2
       )}`;
@@ -68,21 +68,32 @@ form.addEventListener("submit", (e) => {
         `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(2)}`
       );
       document.getElementById(
-        "profile"
+        "ticket"
       ).innerHTML = `Il costo del viaggio per ${km} km è €${priceafter65.toFixed(
         2
       )}`;
     } else {
       console.log(`Il costo del viaggio per ${km} km è €${price.toFixed(2)}`);
       document.getElementById(
-        "profile"
+        "ticket"
       ).innerHTML = `Il costo del viaggio per ${km} km è €${price.toFixed(2)}`;
     }
   }
   // stampare in pagina i dati che abbiamo ottenuto
 
-  // priceunder18 , priceafter65 , price (normale)
+  // numero e posto
 
+  const trainSeat = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+
+  const lettere = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+  const letteraRandom = Math.floor(Math.random() * lettere.length);
+  const carrozza = lettere[letteraRandom];
+  // element card
+
+  document.getElementById("profile").innerHTML = firstName;
+  document.getElementById("seat").innerHTML = `Posto n. ${trainSeat}`;
+  document.getElementById("wagone").innerHTML = `Carrozza ${carrozza}`;
   // niente deve uscire da questa
 });
 
